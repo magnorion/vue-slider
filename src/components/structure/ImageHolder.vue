@@ -30,9 +30,10 @@
     }
 </script>
 
-<style scoped>
+<style>
     #slider-image-holder{
-        height: 400px;
+        height: 300px;
+        transition: ease-out all 0.5s;
     }
 
     img{
