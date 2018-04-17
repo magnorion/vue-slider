@@ -1,5 +1,6 @@
 <template>
     <div id="slider-bar">
+        <count-image :count="counter"></count-image>
         <ul>
             <li @click="prev"> prev </li>
             <li @click="next"> next </li>
@@ -8,8 +9,12 @@
 </template>
 
 <script>
+    import Count from "./Count.vue";
     export default {
         props: ["counter", "width"],
+        components: {
+            "count-image": Count
+        },
         data() {
             return {
                 position: 0

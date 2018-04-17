@@ -74,5 +74,9 @@ module.exports = {
 			"Vue$": "vue/dist/vue.min.js"
 		}
 	},
+	devServer: {
+		publicPath: "/dist",
+		port: 3000
+	},
 	plugins: [new UglifyJSPlugin(), new ExtractTextPlugin('app.[contentHash].css')]
 };

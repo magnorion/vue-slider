@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add vue-loader template-compiler-loader
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js bs
 
 PATH: 
   C:\Users\ldlopes\Desktop\cmder\bin;C:\Users\ldlopes\Desktop\cmder\vendor\conemu-maximus5\ConEmu\Scripts;C:\Users\ldlopes\Desktop\cmder\vendor\conemu-maximus5;C:\Users\ldlopes\Desktop\cmder\vendor\conemu-maximus5\ConEmu;C:\ProgramData\Oracle\Java\javapath; C:\Windows\system32;C:\Windows; C:\Windows\system32\wbem; C:\Program Files (x86)\EasyPHP-DevServer-13.1VC11\binaries\php\php_runningversion; J:\EasyPHP-DevServer-13.1VC11\binaries\php\php_runningversion; C:\Windows\System32\WindowsPowerShell\v1.0; C:\orant\bin;C:\orant\jdk\bin; C:\Program Files (x86)\QuickTime\QTSystem; C:\Program Files\TortoiseSVN\bin; C:\Program Files (x86)\MySQL\MySQL Utilities 1.4.4\; C:\Program Files (x86)\MySQL\MySQL Utilities 1.4.4\Doctrine extensions for PHP\; C:\wamp\bin\php\php7.1.11; C:\Program Files (x86)\Heroku\bin; C:\Program Files (x86)\git\cmd; %SUBLIME%; C:\Program Files (x86)\Git\cmd; C:\HashiCorp\Vagrant\bin; C:\Program Files (x86)\OpenSSH\bin; C:\TDM-GCC-32\bin; C:\Program Files (x86)\Brackets\command; C:\Program Files\nodejs\; C:\Program Files (x86)\Yarn\bin; C:\Program Files (x86)\Skype\Phone\; C:\Program Files\dotnet\;C:\ProgramData\ComposerSetup\bin;C:\Program Files\dotnet\;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Strawberry\c\bin;C:\Strawberry\perl\site\bin;C:\Strawberry\perl\bin;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\wamp64\bin\mysql\mysql5.7.9\bin;C:\MongoDB\bin;C:\curl;C:\wamp64\www\wp;c:\windows\system32;C:\HashiCorp\Vagrant\bin;C:\Program Files (x86)\Yarn\bin\;C:\Program Files (x86)\Git\cmd;C:\Ruby24-x64\bin;C:\RailsFTW420224\bin;C:\RailsInstaller\Ruby2.2.0\bin;C:\Users\ldlopes\AppData\Local\.meteor\;C:\Users\ldlopes\AppData\Local\atom\bin;C:\Program Files (x86)\SSH Communications Security\SSH Secure Shell;C:\wamp64\bin\php\php7.1.11;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\ldlopes\AppData\Roaming\Composer\vendor\bin;C:\Users\ldlopes\AppData\Local\Programs\Fiddler;C:\Users\ldlopes\AppData\Roaming\npm;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Users\ldlopes\AppData\Local\Yarn\bin;C:\Program Files (x86)\Git\usr\bin;C:\Program Files (x86)\Git\usr\share\vim\vim74;C:\Users\ldlopes\Desktop\cmder\
@@ -30,6 +30,8 @@ npm manifest:
       "style-loader": "^0.20.3",
       "uglifyjs-webpack-plugin": "^1.2.4",
       "vue": "^2.5.16",
+      "vue-loader": "^14.2.2",
+      "vue-template-compiler": "^2.5.16",
       "webpack": "^4.5.0",
       "webpack-cli": "^2.0.14"
     }
@@ -970,7 +972,7 @@ Lockfile:
     dependencies:
       inherits "~2.0.0"
   
-  bluebird@^3.5.1:
+  bluebird@^3.1.1, bluebird@^3.5.1:
     version "3.5.1"
     resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.1.tgz#d9551f9de98f1fcda1e683d17ee91a0602ee2eb9"
   
@@ -1488,6 +1490,12 @@ Lockfile:
     version "1.1.0"
     resolved "https://registry.yarnpkg.com/console-control-strings/-/console-control-strings-1.1.0.tgz#3d7cf4464db6446ea644bf4b39507f9851008e8e"
   
+  consolidate@^0.14.0:
+    version "0.14.5"
+    resolved "https://registry.yarnpkg.com/consolidate/-/consolidate-0.14.5.tgz#5a25047bc76f73072667c8cb52c989888f494c63"
+    dependencies:
+      bluebird "^3.1.1"
+  
   constants-browserify@^1.0.0:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/constants-browserify/-/constants-browserify-1.0.0.tgz#c20b96d8c617748aaf1c16021760cd27fcb8cb75"
@@ -1518,6 +1526,18 @@ Lockfile:
   core-util-is@1.0.2, core-util-is@~1.0.0:
     version "1.0.2"
     resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
+  
+  cosmiconfig@^2.1.0, cosmiconfig@^2.1.1:
+    version "2.2.2"
+    resolved "https://registry.yarnpkg.com/cosmiconfig/-/cosmiconfig-2.2.2.tgz#6173cebd56fac042c1f4390edf7af6c07c7cb892"
+    dependencies:
+      is-directory "^0.3.1"
+      js-yaml "^3.4.3"
+      minimist "^1.2.0"
+      object-assign "^4.1.0"
+      os-homedir "^1.0.1"
+      parse-json "^2.2.0"
+      require-from-string "^1.1.0"
   
   create-ecdh@^4.0.0:
     version "4.0.1"
@@ -1710,6 +1730,10 @@ Lockfile:
   dateformat@^3.0.2:
     version "3.0.3"
     resolved "https://registry.yarnpkg.com/dateformat/-/dateformat-3.0.3.tgz#a6e37499a4d9a9cf85ef5872044d62901c9889ae"
+  
+  de-indent@^1.0.2:
+    version "1.0.2"
+    resolved "https://registry.yarnpkg.com/de-indent/-/de-indent-1.0.2.tgz#b2038e846dc33baa5796128d0804b455b8c1e21d"
   
   debug@^2.2.0, debug@^2.3.3, debug@^2.6.8:
     version "2.6.9"
@@ -1912,7 +1936,7 @@ Lockfile:
     version "2.7.3"
     resolved "https://registry.yarnpkg.com/esprima/-/esprima-2.7.3.tgz#96e3b70d5779f6ad49cd032673d1c312767ba581"
   
-  esprima@~4.0.0:
+  esprima@^4.0.0, esprima@~4.0.0:
     version "4.0.0"
     resolved "https://registry.yarnpkg.com/esprima/-/esprima-4.0.0.tgz#4499eddcd1110e0b218bacf2fa7f7f59f55ca804"
   
@@ -2544,6 +2568,10 @@ Lockfile:
       inherits "^2.0.1"
       safe-buffer "^5.0.1"
   
+  hash-sum@^1.0.2:
+    version "1.0.2"
+    resolved "https://registry.yarnpkg.com/hash-sum/-/hash-sum-1.0.2.tgz#33b40777754c6432573c120cc3808bbd10d47f04"
+  
   hash.js@^1.0.0, hash.js@^1.0.3:
     version "1.1.3"
     resolved "https://registry.yarnpkg.com/hash.js/-/hash.js-1.1.3.tgz#340dedbe6290187151c1ea1d777a3448935df846"
@@ -2568,6 +2596,10 @@ Lockfile:
       cryptiles "3.x.x"
       hoek "4.x.x"
       sntp "2.x.x"
+  
+  he@^1.1.0:
+    version "1.1.1"
+    resolved "https://registry.yarnpkg.com/he/-/he-1.1.1.tgz#93410fd21b009735151f8868c2f271f3427e23fd"
   
   hmac-drbg@^1.0.0:
     version "1.0.1"
@@ -2828,6 +2860,10 @@ Lockfile:
       is-data-descriptor "^1.0.0"
       kind-of "^6.0.2"
   
+  is-directory@^0.3.1:
+    version "0.3.1"
+    resolved "https://registry.yarnpkg.com/is-directory/-/is-directory-0.3.1.tgz#61339b6f2475fc772fd9c9d83f5c8575dc154ae1"
+  
   is-dotfile@^1.0.0:
     version "1.0.3"
     resolved "https://registry.yarnpkg.com/is-dotfile/-/is-dotfile-1.0.3.tgz#a6a2f32ffd2dfb04f5ca25ecd0f6b83cf798a1e1"
@@ -3038,6 +3074,13 @@ Lockfile:
   js-tokens@^3.0.0, js-tokens@^3.0.2:
     version "3.0.2"
     resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-3.0.2.tgz#9866df395102130e38f7f996bceb65443209c25b"
+  
+  js-yaml@^3.4.3:
+    version "3.11.0"
+    resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.11.0.tgz#597c1a8bd57152f26d622ce4117851a51f5ebaef"
+    dependencies:
+      argparse "^1.0.7"
+      esprima "^4.0.0"
   
   js-yaml@~3.7.0:
     version "3.7.0"
@@ -3840,7 +3883,7 @@ Lockfile:
     version "0.3.0"
     resolved "https://registry.yarnpkg.com/os-browserify/-/os-browserify-0.3.0.tgz#854373c7f5c2315914fc9bfc6bd8238fdda1ec27"
   
-  os-homedir@^1.0.0:
+  os-homedir@^1.0.0, os-homedir@^1.0.1:
     version "1.0.2"
     resolved "https://registry.yarnpkg.com/os-homedir/-/os-homedir-1.0.2.tgz#ffbc4988336e0e833de0c168c7ef152121aa7fb3"
   
@@ -4134,6 +4177,29 @@ Lockfile:
       postcss "^5.0.4"
       uniqid "^4.0.0"
   
+  postcss-load-config@^1.1.0:
+    version "1.2.0"
+    resolved "https://registry.yarnpkg.com/postcss-load-config/-/postcss-load-config-1.2.0.tgz#539e9afc9ddc8620121ebf9d8c3673e0ce50d28a"
+    dependencies:
+      cosmiconfig "^2.1.0"
+      object-assign "^4.1.0"
+      postcss-load-options "^1.2.0"
+      postcss-load-plugins "^2.3.0"
+  
+  postcss-load-options@^1.2.0:
+    version "1.2.0"
+    resolved "https://registry.yarnpkg.com/postcss-load-options/-/postcss-load-options-1.2.0.tgz#b098b1559ddac2df04bc0bb375f99a5cfe2b6d8c"
+    dependencies:
+      cosmiconfig "^2.1.0"
+      object-assign "^4.1.0"
+  
+  postcss-load-plugins@^2.3.0:
+    version "2.3.0"
+    resolved "https://registry.yarnpkg.com/postcss-load-plugins/-/postcss-load-plugins-2.3.0.tgz#745768116599aca2f009fad426b00175049d8d92"
+    dependencies:
+      cosmiconfig "^2.1.1"
+      object-assign "^4.1.0"
+  
   postcss-merge-idents@^2.1.5:
     version "2.1.7"
     resolved "https://registry.yarnpkg.com/postcss-merge-idents/-/postcss-merge-idents-2.1.7.tgz#4c5530313c08e1d5b3bbf3d2bbc747e278eea270"
@@ -4311,7 +4377,7 @@ Lockfile:
       source-map "^0.5.6"
       supports-color "^3.2.3"
   
-  postcss@^6.0.1:
+  postcss@^6.0.1, postcss@^6.0.8:
     version "6.0.21"
     resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.21.tgz#8265662694eddf9e9a5960db6da33c39e4cd069d"
     dependencies:
@@ -4331,7 +4397,7 @@ Lockfile:
     version "0.2.0"
     resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
   
-  prettier@^1.5.3:
+  prettier@^1.5.3, prettier@^1.7.0:
     version "1.12.0"
     resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.12.0.tgz#d26fc5894b9230de97629b39cae225b503724ce8"
   
@@ -4736,6 +4802,10 @@ Lockfile:
     version "2.1.1"
     resolved "https://registry.yarnpkg.com/require-directory/-/require-directory-2.1.1.tgz#8c64ad5fd30dab1c976e2344ffe7f792a6a6df42"
   
+  require-from-string@^1.1.0:
+    version "1.2.1"
+    resolved "https://registry.yarnpkg.com/require-from-string/-/require-from-string-1.2.1.tgz#529c9ccef27380adfec9a2f965b649bbee636418"
+  
   require-main-filename@^1.0.1:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/require-main-filename/-/require-main-filename-1.0.1.tgz#97f717b69d48784f5f526a6c5aa8ffdda055a4d1"
@@ -4761,7 +4831,7 @@ Lockfile:
     version "0.2.1"
     resolved "https://registry.yarnpkg.com/resolve-url/-/resolve-url-0.2.1.tgz#2c637fe77c893afd2a663fe21aa9080068e2052a"
   
-  resolve@^1.1.6:
+  resolve@^1.1.6, resolve@^1.4.0:
     version "1.7.1"
     resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.7.1.tgz#aadd656374fd298aee895bc026b8297418677fd3"
     dependencies:
@@ -5622,6 +5692,46 @@ Lockfile:
     dependencies:
       indexof "0.0.1"
   
+  vue-hot-reload-api@^2.2.0:
+    version "2.3.0"
+    resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.0.tgz#97976142405d13d8efae154749e88c4e358cf926"
+  
+  vue-loader@^14.2.2:
+    version "14.2.2"
+    resolved "https://registry.yarnpkg.com/vue-loader/-/vue-loader-14.2.2.tgz#c8cf3c2e29b6fb2ee595248a2aa6005038a125b3"
+    dependencies:
+      consolidate "^0.14.0"
+      hash-sum "^1.0.2"
+      loader-utils "^1.1.0"
+      lru-cache "^4.1.1"
+      postcss "^6.0.8"
+      postcss-load-config "^1.1.0"
+      postcss-selector-parser "^2.0.0"
+      prettier "^1.7.0"
+      resolve "^1.4.0"
+      source-map "^0.6.1"
+      vue-hot-reload-api "^2.2.0"
+      vue-style-loader "^4.0.1"
+      vue-template-es2015-compiler "^1.6.0"
+  
+  vue-style-loader@^4.0.1:
+    version "4.1.0"
+    resolved "https://registry.yarnpkg.com/vue-style-loader/-/vue-style-loader-4.1.0.tgz#7588bd778e2c9f8d87bfc3c5a4a039638da7a863"
+    dependencies:
+      hash-sum "^1.0.2"
+      loader-utils "^1.0.2"
+  
+  vue-template-compiler@^2.5.16:
+    version "2.5.16"
+    resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.5.16.tgz#93b48570e56c720cdf3f051cc15287c26fbd04cb"
+    dependencies:
+      de-indent "^1.0.2"
+      he "^1.1.0"
+  
+  vue-template-es2015-compiler@^1.6.0:
+    version "1.6.0"
+    resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.6.0.tgz#dc42697133302ce3017524356a6c61b7b69b4a18"
+  
   vue@^2.5.16:
     version "2.5.16"
     resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.16.tgz#07edb75e8412aaeed871ebafa99f4672584a0085"
@@ -5869,11 +5979,16 @@ Lockfile:
       yeoman-environment "^2.0.5"
 
 Trace: 
-  Error: Couldn't find package "template-compiler-loader" on the "npm" registry.
-      at new MessageError (C:\Program Files (x86)\Yarn\lib\cli.js:186:110)
-      at NpmResolver.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:51625:15)
-      at Generator.next (<anonymous>)
-      at step (C:\Program Files (x86)\Yarn\lib\cli.js:98:30)
-      at C:\Program Files (x86)\Yarn\lib\cli.js:109:13
-      at <anonymous>
-      at process._tickCallback (internal/process/next_tick.js:188:7)
+  Error: Command failed.
+  Exit code: 3221225786
+  Command: C:\Windows\system32\cmd.exe
+  Arguments: /d /s /c browser-sync start --config bs-config.js
+  Directory: C:\Users\ldlopes\Desktop\my-sand-box\node\vue\slider
+  Output:
+  
+      at ProcessTermError.MessageError (C:\Program Files (x86)\Yarn\lib\cli.js:186:110)
+      at new ProcessTermError (C:\Program Files (x86)\Yarn\lib\cli.js:226:113)
+      at ChildProcess.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:30281:17)
+      at ChildProcess.emit (events.js:159:13)
+      at maybeClose (internal/child_process.js:943:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:220:5)
