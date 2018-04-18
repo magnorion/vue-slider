@@ -1,7 +1,7 @@
 <template>
     <div>
         <ul>
-            <li v-for="tick in count" :key="tick"></li>
+            <li class="slider-ticker" @click="change(tick-1, $event)" v-for="tick in count" :key="tick"></li>
         </ul>
     </div>
 </template>
@@ -9,13 +9,20 @@
 <script>
     export default {
         props: ["count"],
-        mounted() {
-            console.log(this.count);
-        },
         methods: {
-            change: function() {
-                
-            }
+            change: function(tick, e) {
+                let ticker = e.target,
+                tickers = document.querySelectorAll(".slider-ticker");
+
+                tickers.forEach(ele => {
+                    ele.style.background = "#555";
+                });
+
+                ticker.style.background = "#fff";
+
+                this.$parent.$emit("next", tick);
+            },
+            tickerNext: function () {}
         }
     }
 </script>

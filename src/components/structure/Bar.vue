@@ -39,6 +39,12 @@
                 let container = document.querySelector("#slider-image-holder");
                 container.style.marginLeft = position + "px";
             }
+        },
+        mounted() {
+            this.$on("next", (tick) => {
+                let pos = ( tick * this.width ) * -1;
+                this.animate( pos );
+            });
         }
     }
 </script>
