@@ -9,20 +9,38 @@
 <script>
     export default {
         props: ["count"],
+        data() {
+            return {
+                bgOn: "#fff",
+                bgOff: "#555"
+            }
+        },
         methods: {
             change: function(tick, e) {
                 let ticker = e.target,
-                tickers = document.querySelectorAll(".slider-ticker");
+                tickers = document.querySelectorAll("li.slider-ticker");
 
                 tickers.forEach(ele => {
-                    ele.style.background = "#555";
+                    ele.style.background = this.bgOff;
                 });
 
-                ticker.style.background = "#fff";
+                ticker.style.background = this.bgOn;
 
                 this.$parent.$emit("next", tick);
             },
-            tickerNext: function () {}
+            tickerNext: function (position, width) {
+                let tick = position / width,
+                tickers = document.querySelectorAll("li.slider-ticker");
+
+                if (tick < 0) tick = tick * -1;
+
+                let tickActivate = tickers[tick];
+                tickers.forEach(t => {
+                    t.style.background = this.bgOff;
+                });
+                tickActivate.style.background = this.bgOn;
+
+            }
         }
     }
 </script>
