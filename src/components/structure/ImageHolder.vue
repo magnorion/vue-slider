@@ -1,6 +1,10 @@
 <template>
     <div id="slider-image-holder">
-        <img v-for="image in images" :src="image" :key="image">
+        <ul>
+            <li v-for="image in images" :key="image">
+                <img :src="image" >
+            </li>
+        </ul>
     </div>
 </template>
 
@@ -17,7 +21,7 @@
             },
             calcImage: function() {
                 const self = this;
-                let images = document.querySelectorAll("#slider-image-holder img");
+                let images = document.querySelectorAll("#slider-image-holder ul li img");
                 for(var i = 0; i < images.length; i++) {
                     images[i].style.width = self.width + "px";
                 }
@@ -31,12 +35,17 @@
 </script>
 
 <style>
-    #slider-image-holder{
+    #slider-image-holder {
         height: 300px;
         transition: ease-out all 0.5s;
     }
 
-    img{
+    #slider-image-holder ul {
+        padding: 0px !important;
+        margin: 0px !important;
+    }
+
+    #slider-image-holder ul li {
         float: left;
     }
 </style>
